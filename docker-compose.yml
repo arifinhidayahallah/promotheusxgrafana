@@ -23,7 +23,7 @@ services:
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
     container_name: cadvisor
-    command: -port=8081
+    # command: -port=8081
     ports:
       - "8080:8080"
     volumes:
@@ -31,9 +31,11 @@ services:
     - /var/run:/var/run:rw
     - /sys:/sys:ro
     - /var/lib/docker/:/var/lib/docker:ro
+    - /var/run/docker.sock:/var/run/docker.sock:ro
     privileged: true
     networks: 
       -  monitoring
+
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
