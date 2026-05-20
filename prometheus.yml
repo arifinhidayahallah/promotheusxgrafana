@@ -7,4 +7,4 @@ scrape_configs:
 #      - targets: ['node_exporter:9002']
   - job_name: 'cadvisor'
     static_configs:
-      -  targets: ['cadvisor:9001']
+      -  targets: ['cadvisor:8081']

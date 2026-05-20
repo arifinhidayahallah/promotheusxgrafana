@@ -23,7 +23,7 @@ services:
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
     container_name: cadvisor
-    command: -port=9001
+    command: -port=8081
     ports:
       - "8080:8080"
     volumes:
